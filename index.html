@@ -51,13 +51,18 @@
             margin-top: 20px;
         }
 
-        img {
-            width: 60%; /* Define a largura das imagens como 60% da largura da carta */
-            max-width: 400px; /* Limite máximo de 400px */
+        .imagens {
+            display: flex; /* Ativa o layout flexível */
+            justify-content: space-between; /* Distribui as imagens com espaçamento entre elas */
+            gap: 10px; /* Espaçamento entre as imagens */
+            margin: 20px 0; /* Espaçamento acima e abaixo das imagens */
+        }
+
+        .imagens img {
+            max-width: 45%; /* Limita a largura das imagens */
+            height: auto; /* Mantém a proporção das imagens */
             border: 2px solid red;
             border-radius: 10px;
-            margin: 20px auto;
-            display: block;
             box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
         }
 
@@ -70,7 +75,10 @@
 <body>
     <div class="carta">
         <h1>Para a Minha Felicidade ❤️</h1>
-        <img src="imagem1.jpeg" alt="Foto especial">
+        <div class="imagens">
+            <img src="imagem1.jpeg" alt="Foto especial">
+            <img src="imagem3.jpeg" alt="Foto especial2">
+        </div>
         <p>
             Você é a luz que ilumina meu mundo, o sorriso que alegra meus dias e o amor que me completa. Te amo mais do que palavras podem expressar.
             Nossa história até aqui foi engraçada, com muitas desavenças, desconfortos, porém, o mais importante de tudo é nossa resiliência, a nossa
@@ -91,11 +99,19 @@
             Não sou bom com palavras, mas este texto é sincero. Eu amo você do fundo do meu coração e desejo que um dia você seja minha esposa, 
             para realizarmos nossos sonhos juntos. Merecemos a felicidade e, com você, tenho certeza de que ela estará sempre à porta.
         </p>
-        <p>Nosso Scrapbook estará completo um dia.
-        </p>
+        <p>Nosso Scrapbook estará completo um dia.</p>
         <strong>Com amor, Renan.</strong>
-        <img src="imagem2.jpg" alt="Foto fim">
+        <div class="imagens">
+            <img src="imagem2.jpg" alt="Foto fim">
+            <img src="imagem4.jpeg" alt="Foto fim2">
+        </div>
     </div>
-    <audio controls autoplay loop src="musica1.mp3"></audio>
+    <audio id="musica" autoplay loop muted>
+        <source src="musica1.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        const audio = document.getElementById('musica');
+        audio.muted = false; // Desativa o "muted" após carregar
+    </script>
 </body>
 </html>
